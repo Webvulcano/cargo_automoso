@@ -120,12 +120,11 @@ body {
   user-drag: none;
 }
 
-/* Oldalra vándorló hullám a WaveDivider `animate` prop-ot kapott
-   elválasztóin (a "Készen áll..." CTA szekció körül). A path 4x ismétli
-   ugyanazt a 720-egység széles csempét, a belső div 200% szélességű —
-   -25% eltolás = pontosan 1 csempe = varrat nélküli, végtelen loop.
-   A transform egy plain div-en fut (nem az svg gyökerén), hogy elkerüljük
-   a percentage-translateX SVG-n való megbízhatatlanságát. */
+/* Oldalra hullámzó mozgás a WaveDivider `animate` prop-ot kapott
+   elválasztóin (a "Készen áll..." CTA szekció körül). `alternate` irány:
+   oda-vissza leng, sosem "ugrik vissza" — nincs instant reset-pont, így
+   nem függ semmilyen varrat-illesztéstől (a `linear infinite` egyirányú
+   verzió a gyakorlatban ugrott a ciklus végén, ezért váltottunk). */
 @keyframes wave-flow {
   from {
     transform: translateX(0);
@@ -136,7 +135,7 @@ body {
 }
 
 .wave-flow {
-  animation: wave-flow 8s linear infinite;
+  animation: wave-flow 6s ease-in-out infinite alternate;
 }
 
 @media (prefers-reduced-motion: reduce) {
