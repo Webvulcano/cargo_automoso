@@ -19,9 +19,18 @@ export default function Home() {
         <Steps />
         <WaveDivider bgClassName="bg-surface" fillClassName="fill-background" />
         <Faq />
-        <WaveDivider bgClassName="bg-background" fillClassName="fill-surface" flip />
+        <WaveDivider
+          bgClassName="bg-background"
+          fillClassName="fill-surface"
+          flip
+          animate
+        />
         <Contact />
-        <WaveDivider bgClassName="bg-surface" fillClassName="fill-primary-dark" />
+        <WaveDivider
+          bgClassName="bg-surface"
+          fillClassName="fill-primary-dark"
+          animate
+        />
       </main>
       <Footer />
     </>

@@ -120,52 +120,25 @@ body {
   user-drag: none;
 }
 
-/* Hab-wipe a Steps kártyákon — csak akkor indul (kártyánként sorban),
-   amikor a szekció látótérbe kerül. Az időzítés (1.2s) a Steps.jsx
-   STEP_DURATION konstansával egyezzen. */
-@keyframes steps-foam-sweep {
-  0% {
-    transform: translateX(-140%) skewX(-12deg);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
+/* Finom hullámzás a WaveDivider path-jában — csak a `animate` prop-ot kapott
+   elválasztókon (a "Készen áll..." CTA szekció körül). Ugyanaz a pontszám/
+   parancs-szerkezet a path-ban, csak a Y-koordináták térnek el kicsit. */
+@keyframes wave-undulate {
+  0%,
   100% {
-    transform: translateX(220%) skewX(-12deg);
-    opacity: 0;
+    d: path("M0,40 C240,100 480,0 720,50 C960,100 1200,10 1440,50 L1440,120 L0,120 Z");
+  }
+  50% {
+    d: path("M0,55 C240,80 480,20 720,35 C960,80 1200,25 1440,60 L1440,120 L0,120 Z");
   }
 }
 
-.steps-foam-band {
-  background:
-    radial-gradient(circle at 20% 35%, rgba(30, 111, 235, 0.22) 0 12%, transparent 13%),
-    radial-gradient(circle at 45% 68%, rgba(30, 111, 235, 0.28) 0 15%, transparent 16%),
-    radial-gradient(circle at 70% 30%, rgba(30, 111, 235, 0.2) 0 10%, transparent 11%),
-    radial-gradient(circle at 88% 62%, rgba(30, 111, 235, 0.25) 0 13%, transparent 14%),
-    linear-gradient(
-      100deg,
-      transparent,
-      rgba(30, 111, 235, 0.15) 25%,
-      rgba(255, 255, 255, 0.95) 50%,
-      rgba(30, 111, 235, 0.15) 75%,
-      transparent
-    );
-  filter: blur(1px);
-  animation: steps-foam-sweep 1.2s ease-in-out 1 both;
-  animation-play-state: paused;
-}
-
-.steps-foam-band.steps-foam-play {
-  animation-play-state: running;
+.wave-animate {
+  animation: wave-undulate 7s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .steps-foam-band {
+  .wave-animate {
     animation: none;
-    display: none;
   }
 }

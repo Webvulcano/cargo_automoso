@@ -1,4 +1,9 @@
-export default function WaveDivider({ bgClassName, fillClassName, flip = false }) {
+export default function WaveDivider({
+  bgClassName,
+  fillClassName,
+  flip = false,
+  animate = false,
+}) {
   return (
     <div
       aria-hidden="true"
@@ -9,7 +14,10 @@ export default function WaveDivider({ bgClassName, fillClassName, flip = false }
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
       >
-        <path d="M0,40 C240,100 480,0 720,50 C960,100 1200,10 1440,50 L1440,120 L0,120 Z" />
+        <path
+          className={animate ? "wave-animate" : ""}
+          d="M0,40 C240,100 480,0 720,50 C960,100 1200,10 1440,50 L1440,120 L0,120 Z"
+        />
       </svg>
     </div>
   );
