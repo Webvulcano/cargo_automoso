@@ -105,3 +105,8 @@ body {
 .hero-ba-handle-once {
   animation: hero-ba-handle-once 1.6s ease-out 1 forwards;
 }
+
+.hero-ba-no-drag {
+  -webkit-user-drag: none;
+  user-drag: none;
+}

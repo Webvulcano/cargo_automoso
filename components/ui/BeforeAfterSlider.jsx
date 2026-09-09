@@ -55,8 +55,9 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden rounded-2xl bg-surface ${className}`}
+      className={`relative select-none overflow-hidden rounded-2xl bg-surface ${className}`}
       style={{ aspectRatio: aspect }}
+      onDragStart={(e) => e.preventDefault()}
     >
       <Image
         src={after.src}
@@ -64,7 +65,8 @@ export default function BeforeAfterSlider({
         fill
         sizes={sizes}
         priority
-        className="object-cover"
+        draggable={false}
+        className="hero-ba-no-drag object-cover"
       />
 
       <div className={`${clipClass} absolute inset-0`} style={clipStyle}>
@@ -74,6 +76,7 @@ export default function BeforeAfterSlider({
           fill
           sizes={sizes}
           priority
+          draggable={false}
           className="object-cover"
         />
       </div>
