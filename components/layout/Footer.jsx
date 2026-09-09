@@ -18,8 +18,11 @@ const BUBBLES = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-primary-dark text-white/80">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+    <footer className="relative bg-primary-dark text-white/80">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -top-10 bottom-0 overflow-hidden md:-top-16"
+      >
         {BUBBLES.map((b, i) => (
           <span
             key={i}

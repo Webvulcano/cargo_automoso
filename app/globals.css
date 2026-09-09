@@ -144,11 +144,13 @@ body {
   }
 }
 
-/* Buborékok a Footer-ben — a footer overflow-hidden garantálja hogy sosem
-   lógnak ki belőle, függetlenül a pontos magasságtól. Duration/delay
-   kártyánként (bubble-önként) inline style-ból jön, ezért itt csak a
-   longhand animation-name/timing/iteration szerepel (nem a shorthand,
-   hogy az inline animationDuration/Delay biztosan ne ütközzön). */
+/* Buborékok a Footer-ben — a wrapper overflow-hidden garantálja hogy sosem
+   lógnak ki, a wrapper pedig a footer teteje fölé is kiterjed (a WaveDivider
+   magasságával, -top-10/md:-top-16 a Footer.jsx-ben), így a buborékok a
+   hullámzó elválasztóig is felszállhatnak. Duration/delay kártyánként
+   (bubble-önként) inline style-ból jön, ezért itt csak a longhand
+   animation-name/timing/iteration szerepel (nem a shorthand, hogy az
+   inline animationDuration/Delay biztosan ne ütközzön). */
 @keyframes footer-bubble-rise {
   0% {
     transform: translateY(0);
@@ -161,7 +163,7 @@ body {
     opacity: 0.3;
   }
   100% {
-    transform: translateY(-160px);
+    transform: translateY(-220px);
     opacity: 0;
   }
 }
