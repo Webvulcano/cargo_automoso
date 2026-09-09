@@ -121,20 +121,20 @@ body {
 }
 
 /* Finom hullámzás a WaveDivider path-jában — csak a `animate` prop-ot kapott
-   elválasztókon (a "Készen áll..." CTA szekció körül). Ugyanaz a pontszám/
-   parancs-szerkezet a path-ban, csak a Y-koordináták térnek el kicsit. */
+   elválasztókon (a "Készen áll..." CTA szekció körül). Sima transform (nem a
+   CSS "d" property-t animálja, ami nem minden böngészőben megbízható). */
 @keyframes wave-undulate {
   0%,
   100% {
-    d: path("M0,40 C240,100 480,0 720,50 C960,100 1200,10 1440,50 L1440,120 L0,120 Z");
+    transform: translateY(0);
   }
   50% {
-    d: path("M0,55 C240,80 480,20 720,35 C960,80 1200,25 1440,60 L1440,120 L0,120 Z");
+    transform: translateY(-14px);
   }
 }
 
 .wave-animate {
-  animation: wave-undulate 7s ease-in-out infinite;
+  animation: wave-undulate 6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
