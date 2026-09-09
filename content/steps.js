@@ -5,7 +5,7 @@ export const STEPS = {
   subtitle: "Három lépés, semmi bonyolítás.",
   items: [
     {
-      title: "Gördüljön be",
+      title: "Guruljon be",
       description: "Nincs szükség előzetes időpontra, egyszerűen beáll.",
     },
     {
@@ -14,7 +14,7 @@ export const STEPS = {
         "Kiválasztja a kívánt szolgáltatást, fizet kártyával vagy készpénzzel, és már kezdjük is.",
     },
     {
-      title: "Gördüljön ki ragyogva",
+      title: "Guruljon ki ragyogva",
       description:
         "Átlagosan 45 perc, és indulhat is tovább csillogó autóval.",
     },

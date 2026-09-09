@@ -51,3 +51,31 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   font-size: var(--text-base);
 }
+
+@keyframes hero-ba-wipe {
+  0%,
+  100% {
+    clip-path: inset(0 0 0 0%);
+  }
+  50% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes hero-ba-handle {
+  0%,
+  100% {
+    left: 0%;
+  }
+  50% {
+    left: 100%;
+  }
+}
+
+.hero-ba-clip {
+  animation: hero-ba-wipe 7s ease-in-out infinite;
+}
+
+.hero-ba-handle {
+  animation: hero-ba-handle 7s ease-in-out infinite;
+}

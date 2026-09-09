@@ -1,6 +1,6 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import ImageSlot from "@/components/ui/ImageSlot";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import { HERO } from "@/content/hero";
 
 export default function Hero() {
@@ -31,7 +31,11 @@ export default function Hero() {
           </ul>
         </div>
 
-        <ImageSlot alt={HERO.image.alt} aspect="4/3" priority />
+        <BeforeAfterSlider
+          before={HERO.beforeAfter.before}
+          after={HERO.beforeAfter.after}
+          aspect="4/3"
+        />
       </Container>
     </section>
   );

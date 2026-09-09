@@ -11,5 +11,8 @@ export const HERO = {
     "180+ elégedett ügyfél",
     "Időpont nélkül, bármikor",
   ],
-  image: { alt: "Kéz, ami egy autó oldaltükrét fényesíti" },
+  beforeAfter: {
+    before: { src: "/images/hero-before.png", alt: "Koszos autó mosás előtt" },
+    after: { src: "/images/hero-after.jpg", alt: "Ragyogó autó mosás után" },
+  },
 };
