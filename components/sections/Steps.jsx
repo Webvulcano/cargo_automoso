@@ -61,7 +61,7 @@ export default function Steps() {
 
               <span
                 aria-hidden="true"
-                className={`steps-foam-band pointer-events-none absolute inset-y-0 left-0 w-3/5${inView ? " steps-foam-play" : ""}`}
+                className={`steps-foam-band pointer-events-none absolute inset-y-0 left-0 w-3/5 ${inView ? "steps-foam-play" : ""}`}
                 style={
                   inView
                     ? { animationDelay: `${index * STEP_DURATION}s` }
