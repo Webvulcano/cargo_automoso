@@ -3,12 +3,11 @@
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 
-// Ezek a globals.css hero-ba-*-sequence keyframe-jeivel egyeznek: a teljes
-// ciklus 1.8s, ennek 70%-ánál (SEQUENCE_REACH_RATIO) éri el a csúszka a jobb
-// szélet — a következő kártya ekkor indul, még a középre-állás alatt (átfedés).
+// Egyezzen a globals.css hero-ba-*-sequence animációinak időtartamával (1.8s).
+// A csúszka a jobb szélen marad, a következő kártya ekkor (a teljes ciklus
+// végén) indul.
 const SEQUENCE_DURATION = 1.8;
-const SEQUENCE_REACH_RATIO = 0.7;
-const SEQUENCE_STAGGER_STEP = SEQUENCE_DURATION * SEQUENCE_REACH_RATIO;
+const SEQUENCE_STAGGER_STEP = SEQUENCE_DURATION;
 
 export default function BeforeAfterSlider({
   before,
