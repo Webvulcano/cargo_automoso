@@ -1,105 +1,103 @@
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import { CONTACT } from "@/content/contact";
 
-const fieldClass =
-  "w-full rounded-lg border border-line bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-primary focus:outline-none";
+function StarIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01L12 2z" />
+    </svg>
+  );
+}
+
+function ClockIcon({ className }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 3" />
+    </svg>
+  );
+}
+
+function UsersIcon({ className }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+}
+
+function ArrowRightIcon({ className }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M5 12h14" />
+      <path d="M13 5l7 7-7 7" />
+    </svg>
+  );
+}
+
+const BADGE_ICONS = { star: StarIcon, clock: ClockIcon, users: UsersIcon };
 
 export default function Contact() {
-  const { form, visitPanel } = CONTACT;
-
   return (
     <section id={CONTACT.id} className="bg-surface py-16 md:py-24">
       <Container>
-        <SectionHeading
-          eyebrow={CONTACT.eyebrow}
-          title={CONTACT.title}
-          subtitle={CONTACT.subtitle}
-        />
+        <div className="rounded-3xl bg-primary-dark px-6 py-14 text-center md:px-16 md:py-20">
+          <h2 className="text-3xl font-bold text-white md:text-4xl">
+            {CONTACT.headline}
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
+            {CONTACT.subtitle}
+          </p>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]">
-          <div className="rounded-2xl bg-primary-dark p-6 text-white/90">
-            <h3 className="text-xl font-semibold text-white">
-              {visitPanel.heading}
-            </h3>
-            <dl className="mt-4 space-y-3 text-base">
-              <div>
-                <dt className="font-medium text-white">Cím</dt>
-                <dd>{visitPanel.address}</dd>
-              </div>
-              <div>
-                <dt className="font-medium text-white">Nyitva tartás</dt>
-                <dd>{visitPanel.hours}</dd>
-              </div>
-              <div>
-                <dt className="font-medium text-white">Telefon</dt>
-                <dd>
-                  <a href={visitPanel.phone.href} className="underline">
-                    {visitPanel.phone.display}
-                  </a>
-                </dd>
-              </div>
-            </dl>
+          <div className="mt-8 flex justify-center">
+            <Button href={CONTACT.cta.href} variant="accent">
+              {CONTACT.cta.label}
+              <ArrowRightIcon className="h-4 w-4" />
+            </Button>
           </div>
 
-          <form className="grid gap-4 rounded-2xl bg-background p-6 sm:grid-cols-2">
-            <div className="sm:col-span-1">
-              <label htmlFor="contact-name" className="mb-1 block text-sm font-medium text-primary-dark">
-                {form.nameLabel}
-              </label>
-              <input id="contact-name" type="text" placeholder={form.namePlaceholder} className={fieldClass} />
-            </div>
-
-            <div className="sm:col-span-1">
-              <label htmlFor="contact-phone" className="mb-1 block text-sm font-medium text-primary-dark">
-                {form.phoneLabel}
-              </label>
-              <input id="contact-phone" type="tel" placeholder={form.phonePlaceholder} className={fieldClass} />
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="contact-email" className="mb-1 block text-sm font-medium text-primary-dark">
-                {form.emailLabel}
-              </label>
-              <input id="contact-email" type="email" placeholder={form.emailPlaceholder} className={fieldClass} />
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="contact-topic" className="mb-1 block text-sm font-medium text-primary-dark">
-                {form.topicLabel}
-              </label>
-              <select id="contact-topic" className={fieldClass} defaultValue="">
-                <option value="" disabled>
-                  Válasszon…
-                </option>
-                {form.topicOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="contact-message" className="mb-1 block text-sm font-medium text-primary-dark">
-                {form.messageLabel}
-              </label>
-              <textarea
-                id="contact-message"
-                rows={4}
-                placeholder={form.messagePlaceholder}
-                className={fieldClass}
-              />
-            </div>
-
-            <div className="sm:col-span-2">
-              {/* TODO: kösd be egy backendhez / email-küldéshez, ha az ügyfél kéri */}
-              <Button type="button" variant="accent" className="w-full sm:w-auto">
-                {form.submitLabel}
-              </Button>
-            </div>
-          </form>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/60">
+            {CONTACT.badges.map((badge) => {
+              const Icon = BADGE_ICONS[badge.icon];
+              return (
+                <span key={badge.label} className="flex items-center gap-2">
+                  <Icon className="h-4 w-4" />
+                  {badge.label}
+                </span>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>
