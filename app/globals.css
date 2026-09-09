@@ -80,30 +80,45 @@ body {
   animation: hero-ba-handle 7s ease-in-out infinite;
 }
 
-@keyframes hero-ba-wipe-once {
+/* Teljes balról-jobbra végigfutás, majd középre (50%) állás — csak akkor indul,
+   amikor a JS (IntersectionObserver) átkapcsolja paused -> running.
+   Az időzítés (1.8s) a BeforeAfterSlider.jsx SEQUENCE_STEP konstansával egyezzen. */
+@keyframes hero-ba-wipe-sequence {
   0% {
     clip-path: inset(0 0 0 0%);
+  }
+  70% {
+    clip-path: inset(0 0 0 100%);
   }
   100% {
     clip-path: inset(0 0 0 50%);
   }
 }
 
-@keyframes hero-ba-handle-once {
+@keyframes hero-ba-handle-sequence {
   0% {
     left: 0%;
+  }
+  70% {
+    left: 100%;
   }
   100% {
     left: 50%;
   }
 }
 
-.hero-ba-clip-once {
-  animation: hero-ba-wipe-once 1.6s ease-out 1 forwards;
+.hero-ba-clip-sequence {
+  animation: hero-ba-wipe-sequence 1.8s ease-in-out 1 both;
+  animation-play-state: paused;
 }
 
-.hero-ba-handle-once {
-  animation: hero-ba-handle-once 1.6s ease-out 1 forwards;
+.hero-ba-handle-sequence {
+  animation: hero-ba-handle-sequence 1.8s ease-in-out 1 both;
+  animation-play-state: paused;
+}
+
+.hero-ba-play {
+  animation-play-state: running;
 }
 
 .hero-ba-no-drag {

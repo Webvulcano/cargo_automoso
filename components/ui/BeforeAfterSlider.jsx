@@ -3,6 +3,11 @@
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 
+// Sequence-módban a staggerelt indítás (sequenceIndex * SEQUENCE_STEP) csak
+// akkor pontos, ha ez egyezik a globals.css hero-ba-*-sequence animációinak
+// időtartamával (1.8s).
+const SEQUENCE_STEP = 1.8;
+
 export default function BeforeAfterSlider({
   before,
   after,
@@ -10,6 +15,8 @@ export default function BeforeAfterSlider({
   sizes = "(min-width: 1024px) 50vw, 100vw",
   className = "",
   loop = true,
+  play = false,
+  sequenceIndex = 0,
 }) {
   const containerRef = useRef(null);
   const [position, setPosition] = useState(null);
@@ -47,10 +54,27 @@ export default function BeforeAfterSlider({
   };
 
   const animated = position === null;
-  const clipClass = animated ? (loop ? "hero-ba-clip" : "hero-ba-clip-once") : "";
-  const handleAnimClass = animated ? (loop ? "hero-ba-handle" : "hero-ba-handle-once") : "";
-  const clipStyle = animated ? undefined : { clipPath: `inset(0 0 0 ${position}%)` };
-  const handleStyle = animated ? undefined : { left: `${position}%` };
+
+  let clipClass = "";
+  let handleAnimClass = "";
+  let clipStyle;
+  let handleStyle;
+
+  if (!animated) {
+    clipStyle = { clipPath: `inset(0 0 0 ${position}%)` };
+    handleStyle = { left: `${position}%` };
+  } else if (loop) {
+    clipClass = "hero-ba-clip";
+    handleAnimClass = "hero-ba-handle";
+  } else {
+    clipClass = `hero-ba-clip-sequence${play ? " hero-ba-play" : ""}`;
+    handleAnimClass = `hero-ba-handle-sequence${play ? " hero-ba-play" : ""}`;
+    if (play) {
+      const delay = `${sequenceIndex * SEQUENCE_STEP}s`;
+      clipStyle = { animationDelay: delay };
+      handleStyle = { animationDelay: delay };
+    }
+  }
 
   return (
     <div
