@@ -119,3 +119,53 @@ body {
   -webkit-user-drag: none;
   user-drag: none;
 }
+
+/* Hab-wipe a Steps kártyákon — csak akkor indul (kártyánként sorban),
+   amikor a szekció látótérbe kerül. Az időzítés (1.2s) a Steps.jsx
+   STEP_DURATION konstansával egyezzen. */
+@keyframes steps-foam-sweep {
+  0% {
+    transform: translateX(-140%) skewX(-12deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220%) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+.steps-foam-band {
+  background:
+    radial-gradient(circle at 18% 30%, rgba(255, 255, 255, 0.95) 0 10%, transparent 11%),
+    radial-gradient(circle at 42% 68%, rgba(255, 255, 255, 0.9) 0 13%, transparent 14%),
+    radial-gradient(circle at 68% 28%, rgba(255, 255, 255, 0.95) 0 9%, transparent 10%),
+    radial-gradient(circle at 85% 62%, rgba(255, 255, 255, 0.9) 0 12%, transparent 13%),
+    linear-gradient(
+      100deg,
+      transparent,
+      rgba(219, 234, 254, 0.7) 30%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(219, 234, 254, 0.7) 70%,
+      transparent
+    );
+  filter: blur(1.5px);
+  animation: steps-foam-sweep 1.2s ease-in-out 1 both;
+  animation-play-state: paused;
+}
+
+.steps-foam-band.steps-foam-play {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steps-foam-band {
+    animation: none;
+    display: none;
+  }
+}
