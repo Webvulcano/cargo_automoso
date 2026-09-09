@@ -6,8 +6,11 @@ import { NAV_LINKS, HEADER_CTA } from "@/content/header";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-background/95 backdrop-blur">
-      <Container className="flex h-20 items-center justify-between gap-4">
-        <a href="#top" className="text-xl font-bold text-primary-dark">
+      <Container className="flex min-h-20 items-center justify-between gap-3 sm:gap-4">
+        <a
+          href="#top"
+          className="min-w-0 truncate text-lg font-bold whitespace-nowrap text-primary-dark sm:text-xl"
+        >
           {BUSINESS.brand}
         </a>
 
@@ -23,7 +26,11 @@ export default function Header() {
           ))}
         </nav>
 
-        <Button href={HEADER_CTA.href} variant="accent" className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base">
+        <Button
+          href={HEADER_CTA.href}
+          variant="accent"
+          className="shrink-0 px-3 py-2 text-sm whitespace-nowrap sm:px-6 sm:py-3 sm:text-base"
+        >
           {HEADER_CTA.label}
         </Button>
       </Container>

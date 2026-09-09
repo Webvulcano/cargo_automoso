@@ -70,10 +70,10 @@ const BADGE_ICONS = { star: StarIcon, clock: ClockIcon, users: UsersIcon };
 
 export default function Contact() {
   return (
-    <section id={CONTACT.id} className="bg-surface py-16 md:py-24">
+    <section id={CONTACT.id} className="bg-surface pt-16 pb-10 md:py-24">
       <Container>
-        <div className="rounded-3xl bg-primary-dark px-6 py-14 text-center md:px-16 md:py-20">
-          <h2 className="text-3xl font-bold text-white md:text-4xl">
+        <div className="rounded-3xl bg-primary-dark px-6 py-12 text-center md:px-16 md:py-20">
+          <h2 className="text-2xl font-bold text-white md:text-4xl">
             {CONTACT.headline}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
