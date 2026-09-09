@@ -3,10 +3,12 @@
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 
-// Sequence-módban a staggerelt indítás (sequenceIndex * SEQUENCE_STEP) csak
-// akkor pontos, ha ez egyezik a globals.css hero-ba-*-sequence animációinak
-// időtartamával (1.8s).
-const SEQUENCE_STEP = 1.8;
+// Ezek a globals.css hero-ba-*-sequence keyframe-jeivel egyeznek: a teljes
+// ciklus 1.8s, ennek 70%-ánál (SEQUENCE_REACH_RATIO) éri el a csúszka a jobb
+// szélet — a következő kártya ekkor indul, még a középre-állás alatt (átfedés).
+const SEQUENCE_DURATION = 1.8;
+const SEQUENCE_REACH_RATIO = 0.7;
+const SEQUENCE_STAGGER_STEP = SEQUENCE_DURATION * SEQUENCE_REACH_RATIO;
 
 export default function BeforeAfterSlider({
   before,
@@ -70,7 +72,7 @@ export default function BeforeAfterSlider({
     clipClass = `hero-ba-clip-sequence${play ? " hero-ba-play" : ""}`;
     handleAnimClass = `hero-ba-handle-sequence${play ? " hero-ba-play" : ""}`;
     if (play) {
-      const delay = `${sequenceIndex * SEQUENCE_STEP}s`;
+      const delay = `${sequenceIndex * SEQUENCE_STAGGER_STEP}s`;
       clipStyle = { animationDelay: delay };
       handleStyle = { animationDelay: delay };
     }
