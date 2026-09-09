@@ -24,6 +24,7 @@ export default function Gallery() {
                 aspect={isLarge ? "16/9" : "1/1"}
                 sizes="(min-width: 768px) 25vw, 50vw"
                 className={isLarge ? "col-span-2" : ""}
+                loop={false}
               />
             );
           })}

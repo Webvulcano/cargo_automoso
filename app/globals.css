@@ -79,3 +79,29 @@ body {
 .hero-ba-handle {
   animation: hero-ba-handle 7s ease-in-out infinite;
 }
+
+@keyframes hero-ba-wipe-once {
+  0% {
+    clip-path: inset(0 0 0 0%);
+  }
+  100% {
+    clip-path: inset(0 0 0 50%);
+  }
+}
+
+@keyframes hero-ba-handle-once {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+.hero-ba-clip-once {
+  animation: hero-ba-wipe-once 1.6s ease-out 1 forwards;
+}
+
+.hero-ba-handle-once {
+  animation: hero-ba-handle-once 1.6s ease-out 1 forwards;
+}
