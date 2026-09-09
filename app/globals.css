@@ -143,3 +143,38 @@ body {
     animation: none;
   }
 }
+
+/* Buborékok a Footer-ben — a footer overflow-hidden garantálja hogy sosem
+   lógnak ki belőle, függetlenül a pontos magasságtól. Duration/delay
+   kártyánként (bubble-önként) inline style-ból jön, ezért itt csak a
+   longhand animation-name/timing/iteration szerepel (nem a shorthand,
+   hogy az inline animationDuration/Delay biztosan ne ütközzön). */
+@keyframes footer-bubble-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-160px);
+    opacity: 0;
+  }
+}
+
+.footer-bubble {
+  animation-name: footer-bubble-rise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-bubble {
+    animation: none;
+    opacity: 0;
+  }
+}
