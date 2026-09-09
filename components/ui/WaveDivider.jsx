@@ -28,8 +28,8 @@ export default function WaveDivider({
     >
       <div className={`absolute inset-0 ${flip ? "-scale-x-100" : ""}`}>
         <div
-          className="wave-flow absolute bottom-0 left-0 h-full"
-          style={{ width: "200%" }}
+          className="wave-flow absolute left-0"
+          style={{ width: "200%", top: "-2px", bottom: "-2px" }}
         >
           <svg
             className={`block h-full w-full ${fillClassName}`}

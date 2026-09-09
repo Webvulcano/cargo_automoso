@@ -18,7 +18,7 @@ const BUBBLES = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-primary-dark text-white/80">
+    <footer className="relative -mt-px bg-primary-dark text-white/80">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 -top-10 bottom-0 overflow-hidden md:-top-16"
