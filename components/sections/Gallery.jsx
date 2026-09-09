@@ -1,6 +1,6 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import ImageSlot from "@/components/ui/ImageSlot";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import { GALLERY } from "@/content/gallery";
 
 export default function Gallery() {
@@ -17,9 +17,10 @@ export default function Gallery() {
           {GALLERY.items.map((item, index) => {
             const isLarge = index >= 4;
             return (
-              <ImageSlot
-                key={item.alt}
-                alt={item.alt}
+              <BeforeAfterSlider
+                key={item.before.alt}
+                before={item.before}
+                after={item.after}
                 aspect={isLarge ? "16/9" : "1/1"}
                 sizes="(min-width: 768px) 25vw, 50vw"
                 className={isLarge ? "col-span-2" : ""}
