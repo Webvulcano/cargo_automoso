@@ -11,4 +11,4 @@ export const NAV_LINKS = [
   { id: CONTACT.id, label: "Kapcsolat" },
 ];
 
-export const HEADER_CTA = { label: "Hívjon most", href: BUSINESS.phone.href };
+export const HEADER_CTA = { label: BUSINESS.phone.display, href: BUSINESS.phone.href };

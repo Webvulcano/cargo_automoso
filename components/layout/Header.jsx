@@ -23,17 +23,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <a
-            href={BUSINESS.phone.href}
-            className="hidden text-base font-semibold text-primary-dark sm:block"
-          >
-            {BUSINESS.phone.display}
-          </a>
-          <Button href={HEADER_CTA.href} variant="accent" className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base">
-            {HEADER_CTA.label}
-          </Button>
-        </div>
+        <Button href={HEADER_CTA.href} variant="accent" className="px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base">
+          {HEADER_CTA.label}
+        </Button>
       </Container>
     </header>
   );
