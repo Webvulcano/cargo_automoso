@@ -49,13 +49,6 @@ export default function BeforeAfterSlider({
           </svg>
         </div>
       </div>
-
-      <span className="absolute left-3 top-3 rounded-full bg-primary-dark/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-        Előtte
-      </span>
-      <span className="absolute right-3 top-3 rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-        Utána
-      </span>
     </div>
   );
 }
