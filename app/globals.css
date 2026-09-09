@@ -120,25 +120,27 @@ body {
   user-drag: none;
 }
 
-/* Finom hullámzás a WaveDivider path-jában — csak a `animate` prop-ot kapott
-   elválasztókon (a "Készen áll..." CTA szekció körül). Sima transform (nem a
-   CSS "d" property-t animálja, ami nem minden böngészőben megbízható). */
-@keyframes wave-undulate {
-  0%,
-  100% {
-    transform: translateY(0);
+/* Oldalra vándorló hullám a WaveDivider `animate` prop-ot kapott
+   elválasztóin (a "Készen áll..." CTA szekció körül). A path 4x ismétli
+   ugyanazt a 720-egység széles csempét, a belső div 200% szélességű —
+   -25% eltolás = pontosan 1 csempe = varrat nélküli, végtelen loop.
+   A transform egy plain div-en fut (nem az svg gyökerén), hogy elkerüljük
+   a percentage-translateX SVG-n való megbízhatatlanságát. */
+@keyframes wave-flow {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    transform: translateY(-14px);
+  to {
+    transform: translateX(-25%);
   }
 }
 
-.wave-animate {
-  animation: wave-undulate 6s ease-in-out infinite;
+.wave-flow {
+  animation: wave-flow 8s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wave-animate {
+  .wave-flow {
     animation: none;
   }
 }
