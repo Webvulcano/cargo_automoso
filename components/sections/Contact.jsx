@@ -81,10 +81,10 @@ export default function Contact() {
               className="h-12 w-auto md:h-14"
             />
             <img
-              src="/images/logo-white-title.png"
+              src="/images/white-title.png"
               alt=""
               aria-hidden="true"
-              className="h-12 w-auto md:h-14"
+              className="h-3 w-auto md:h-14"
             />
           </div>
           <h2 className="mt-6 text-2xl font-bold text-white md:text-4xl">
