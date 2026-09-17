@@ -73,12 +73,20 @@ export default function Contact() {
     <section id={CONTACT.id} className="bg-surface pt-16 pb-10 md:py-24">
       <Container>
         <div className="rounded-3xl bg-primary-dark px-6 py-12 text-center md:px-16 md:py-20">
-          <img
-            src="/images/logo-white.png"
-            alt=""
-            aria-hidden="true"
-            className="mx-auto h-12 w-auto md:h-14"
-          />
+          <div className="flex items-center justify-center gap-4">
+            <img
+              src="/images/logo-white.png"
+              alt=""
+              aria-hidden="true"
+              className="h-12 w-auto md:h-14"
+            />
+            <img
+              src="/images/logo-white-title.png"
+              alt=""
+              aria-hidden="true"
+              className="h-12 w-auto md:h-14"
+            />
+          </div>
           <h2 className="mt-6 text-2xl font-bold text-white md:text-4xl">
             {CONTACT.headline}
           </h2>
