@@ -16,11 +16,11 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button variant="accent" href={HERO.primaryCta.href}>
-              {HERO.primaryCta.label}
-            </Button>
             <Button variant="outline" href={HERO.secondaryCta.href}>
               {HERO.secondaryCta.label}
+            </Button>
+            <Button variant="accent" href={HERO.primaryCta.href}>
+              {HERO.primaryCta.label}
             </Button>
           </div>
 
