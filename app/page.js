@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import Gallery from "@/components/sections/Gallery";
+import Services from "@/components/sections/Services";
 import Steps from "@/components/sections/Steps";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <WaveDivider bgClassName="bg-surface" fillClassName="fill-background" />
         <Gallery />
+        <Services />
         <WaveDivider bgClassName="bg-background" fillClassName="fill-surface" flip />
         <Steps />
         <WaveDivider bgClassName="bg-surface" fillClassName="fill-background" />

@@ -6,9 +6,9 @@ import { HERO } from "@/content/hero";
 export default function Hero() {
   return (
     <section id="top" className="bg-surface">
-      <Container className="grid gap-10 py-16 md:grid-cols-2 md:items-center md:py-24">
-        <div>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary-dark md:text-5xl">
+      <Container className="grid gap-8 py-10 md:grid-cols-2 md:items-center md:gap-10 md:py-24">
+        <div className="order-last md:order-none">
+          <h1 className="text-2xl font-bold leading-tight tracking-tight text-primary-dark sm:text-3xl md:text-5xl">
             {HERO.headline}
           </h1>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
@@ -35,6 +35,7 @@ export default function Hero() {
           before={HERO.beforeAfter.before}
           after={HERO.beforeAfter.after}
           aspect="4/3"
+          className="order-first md:order-none"
         />
       </Container>
     </section>

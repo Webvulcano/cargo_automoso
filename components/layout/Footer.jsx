@@ -41,8 +41,12 @@ export default function Footer() {
       <Container className="relative z-10 flex flex-col items-center gap-2 py-8 text-center text-sm">
         <p className="text-base font-semibold text-white">{BUSINESS.brand}</p>
         <p>
-          {BUSINESS.address.full} · {BUSINESS.phone.display}
+          {BUSINESS.address ? `${BUSINESS.address.full} · ` : ""}
+          {BUSINESS.phone.display} · {BUSINESS.email}
         </p>
+        <a href={BUSINESS.instagram.href} target="_blank" rel="noopener noreferrer">
+          {BUSINESS.instagram.display}
+        </a>
         <p>{FOOTER.rightsLine}</p>
       </Container>
     </footer>

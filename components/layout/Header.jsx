@@ -1,17 +1,50 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { BUSINESS } from "@/content/business";
 import { NAV_LINKS, HEADER_CTA } from "@/content/header";
 
 export default function Header() {
+  // Mobilon (< md) amíg a hero szekción állunk, a fejléc eltűnik — több hely
+  // jut a hero tartalmának. Asztali nézetben mindig látszik.
+  //
+  // Az alapállapot (mielőtt a JS lefutna) CSS-sel van megoldva
+  // ("hidden md:block" — mobilon eleve nem jelenik meg, desktopon igen),
+  // mert a useEffect csak a böngésző render UTÁN fut le, így egy
+  // state-alapú megoldás a szerver-render pillanatában (mindig `false`
+  // induló érték) mindig felvillantaná a fejlécet mobilon, mielőtt eltűnne.
+  const [pastHero, setPastHero] = useState(false);
+
+  useEffect(() => {
+    const heroEl = document.getElementById("top");
+    if (!heroEl) return;
+
+    const update = () => setPastHero(window.scrollY >= heroEl.offsetHeight);
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-background/95 backdrop-blur">
+    <header
+      className={`sticky top-0 z-50 border-b border-line bg-background/95 backdrop-blur ${
+        pastHero ? "" : "hidden md:block"
+      }`}
+    >
       <Container className="flex min-h-20 items-center justify-between gap-3 sm:gap-4">
-        <a
-          href="#top"
-          className="min-w-0 truncate text-lg font-bold whitespace-nowrap text-primary-dark sm:text-xl"
-        >
-          {BUSINESS.brand}
+        <a href="#top" className="flex min-w-0 shrink-0 items-center">
+          <img
+            src="/images/logo.jpg"
+            alt={BUSINESS.brand}
+            className="h-12 w-auto sm:h-14"
+          />
         </a>
 
         <nav className="hidden items-center gap-6 md:flex">

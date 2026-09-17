@@ -5,8 +5,8 @@ export const STEPS = {
   subtitle: "Három lépés, semmi bonyolítás.",
   items: [
     {
-      title: "Guruljon be",
-      description: "Nincs szükség előzetes időpontra, egyszerűen beáll.",
+      title: "Egyeztetünk időpontot",
+      description: "Hívjon minket telefonon, és megbeszéljük, mikor jöjjön be.",
     },
     {
       title: "Válasszon és fizessen",

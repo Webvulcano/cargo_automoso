@@ -14,13 +14,12 @@ export default function Gallery() {
     const el = sectionRef.current;
     if (!el) return;
 
+    // Nem disconnect-elünk — a láthatóság minden váltására frissül az
+    // `inView`, ami a hero-ba-play osztályt ki/be kapcsolja. A CSS
+    // animation-play-state: paused/running natívan onnan folytatja, ahol
+    // megállt (nem indul újra elölről), pontosan ahogy kérve volt.
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
+      ([entry]) => setInView(entry.isIntersecting),
       { threshold: 0.3 },
     );
 

@@ -1,0 +1,82 @@
+export const SERVICES = {
+  id: "szolgaltatasok",
+  eyebrow: "Áraink",
+  title: "Csomagok & szolgáltatások",
+  subtitle:
+    "Válasszon a kész csomagjaink közül, vagy állítsa össze igény szerint a kiegészítőkből.",
+  packages: [
+    {
+      name: "RAPID",
+      price: "7 500 Ft",
+      features: ["Előmosás", "Mosókesztyű", "Porszívózás", "Gyors belső takarítás"],
+    },
+    {
+      name: "ALAP",
+      price: "8 500 Ft",
+      features: [
+        "Előmosás",
+        "Aktívhab",
+        "Mosókesztyű",
+        "Porszívózás",
+        "Belső portalanítás",
+        "Üvegek tisztítása",
+      ],
+    },
+    {
+      name: "PRÉMIUM",
+      price: "10 500 Ft",
+      highlight: true,
+      features: [
+        "Előmosás",
+        "Aktívhab",
+        "Mosókesztyű",
+        "Porszívózás",
+        "Belső portalanítás",
+        "Üvegek tisztítása",
+        "Belső ápolás",
+        "Külső gyorsviasz",
+      ],
+    },
+    {
+      name: "PRÉMIUM PLUSZ",
+      price: "13 500 Ft",
+      features: [
+        "Előmosás",
+        "Aktívhab",
+        "Mosókesztyű",
+        "Porszívózás",
+        "Belső portalanítás",
+        "Üvegek tisztítása",
+        "Belső ápolás",
+        "Külső gyorsviasz",
+        "Felnik tisztítása",
+        "Gumiápolás",
+      ],
+    },
+  ],
+  extras: [
+    {
+      label: "Külső mosás",
+      detail: "előmosás, mosókesztyű, öblítés, szárazolás",
+      price: "3 900 Ft",
+    },
+    {
+      label: "Belső takarítás",
+      detail: "porszívózás, portalanítás, üvegek törlése",
+      price: "4 900 Ft",
+    },
+    { label: "Aktívhab", price: "1 200 Ft" },
+    { label: "Bogárolás", price: "1 200 Ft" },
+    { label: "Mosás utáni viasz", price: "1 200 Ft" },
+    { label: "Műanyag ápolás", detail: "belső vagy külső", price: "1 800 Ft" },
+    { label: "Bőrápolás", price: "1 800 Ft" },
+    { label: "Felni tisztítás", detail: "4 db", price: "3 800 Ft" },
+    { label: "Fényszóró polírozás", detail: "/pár", price: "14 500 Ft" },
+    { label: "Kárpittisztítás — első ülések", detail: "/db", price: "4 200 Ft" },
+    { label: "Kárpittisztítás — hátsó ülés", price: "6 200 Ft" },
+    { label: "Kárpittisztítás — padlókárpit", price: "7 200 Ft" },
+  ],
+  surchargeNote: "Extra koszos autók esetében 5 000 Ft felárat számolunk fel.",
+  cosmeticsNote:
+    "Az autókozmetikázás árának megállapítása a helyszíni felmérés után történik.",
+};

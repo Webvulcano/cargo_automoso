@@ -1,3 +1,3 @@
 export const FOOTER = {
-  rightsLine: "© 2026 Csillogó Autómosó Kft. Minden jog fenntartva.",
+  rightsLine: "© 2026 Car Go Autómosó & Kozmetika. Minden jog fenntartva.",
 };

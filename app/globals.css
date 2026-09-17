@@ -3,18 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #10253a;
+  --primary: #1e6feb;
+  --primary-dark: #0b2f52;
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  --surface: #f0f7fc;
+  --muted: #5b7a94;
+  --line: #dce9f2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #1e6feb;
-  --color-primary-dark: #0b2f52;
-  --color-accent: #f97316;
-  --color-accent-hover: #ea580c;
-  --color-surface: #f0f7fc;
-  --color-muted: #5b7a94;
-  --color-line: #dce9f2;
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

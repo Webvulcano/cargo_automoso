@@ -1,17 +1,16 @@
 export const BUSINESS = {
-  brand: "Csillogó Autómosó",
-  legalName: "Csillogó Autómosó Kft.",
-  phone: { display: "+36 30 442 8815", href: "tel:+36304428815" },
-  email: "info@csillogoautomoso.hu",
-  address: { full: "1117 Budapest, Budaörsi út 44." },
-  hours: "Minden nap 7:00–20:00",
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent("Csillogó Autómosó, 1117 Budapest, Budaörsi út 44."),
+  brand: "Car Go Autómosó & Kozmetika",
+  legalName: "Car Go Autómosó & Kozmetika",
+  phone: { display: "+36 30 623 7726", href: "tel:+36306237726" },
+  email: "cargoautomoso@gmail.com",
+  instagram: { display: "@car.go.01", href: "https://instagram.com/car.go.01" },
+  address: { full: "Budapest, Gyöngyvirág u. 52, 1183 (XVIII. kerület)" },
+  hours: null,
+  mapsUrl: "https://maps.app.goo.gl/mcTJmTQJcQsbNhwQ8",
 };
 
 export const SITE = {
-  title: "Csillogó Autómosó — Gyors, minőségi autómosás Budapesten",
+  title: "Car Go Autómosó & Kozmetika — Autómosás és autókozmetika",
   description:
-    "Időpont nélkül, 45 perc alatt ragyogó autóval indulhat tovább. Expressz mosás, havi bérlet, Budapest, 1117.",
+    "Külső-belső mosás, autókozmetika és csomagajánlatok Budapesten, a XVIII. kerületben.",
 };

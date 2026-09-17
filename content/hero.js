@@ -1,16 +1,12 @@
 import { BUSINESS } from "./business";
 
 export const HERO = {
-  headline: "Csillogó autó, mire kihűl a kávéja.",
+  headline: "Mosás és kozmetika egy helyen, Budapesten.",
   subheadline:
-    "Bevisszük, kimossuk, ragyog — 45 perc, időpont nélkül. Ön csak parkoljon le, a többit intézzük.",
+    "Bevisszük, kimossuk, ragyog — átlagosan 45 perc. A XVIII. kerületben, a Gyöngyvirág utcában várjuk.",
   primaryCta: { label: "Hívjon most", href: BUSINESS.phone.href },
   secondaryCta: { label: "Útvonaltervezés", href: BUSINESS.mapsUrl },
-  trustBadges: [
-    "★★★★★ 4,9/5 értékelés",
-    "180+ elégedett ügyfél",
-    "Időpont nélkül, bármikor",
-  ],
+  trustBadges: ["★★★★★ 5,0/5 értékelés (15 Google-vélemény)", "Budapest XVIII. kerület"],
   beforeAfter: {
     before: { src: "/images/hero-before.png", alt: "Koszos autó mosás előtt" },
     after: { src: "/images/hero-after.jpg", alt: "Ragyogó autó mosás után" },
