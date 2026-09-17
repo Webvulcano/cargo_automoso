@@ -84,7 +84,7 @@ export default function Contact() {
               src="/images/white-title.png"
               alt=""
               aria-hidden="true"
-              className="h-3 w-auto md:h-14"
+              className="h-8 w-auto md:h-10"
             />
           </div>
           <h2 className="mt-6 text-2xl font-bold text-white md:text-4xl">

@@ -45,11 +45,17 @@ export default function Header() {
       }`}
     >
       <Container className="flex min-h-20 items-center justify-between gap-3 sm:gap-4">
-        <a href="#top" className="flex min-w-0 shrink-0 items-center">
+        <a href="#top" className="flex min-w-0 shrink-0 items-center gap-2">
           <img
-            src="/images/logo.jpg"
+            src="/images/logo-black.png"
             alt={BUSINESS.brand}
-            className="h-12 w-auto sm:h-14"
+            className="h-10 w-auto sm:h-12"
+          />
+          <img
+            src="/images/black-title.png"
+            alt=""
+            aria-hidden="true"
+            className="h-8 w-auto sm:h-10"
           />
         </a>
 
