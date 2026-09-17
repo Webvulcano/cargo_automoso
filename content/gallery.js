@@ -1,7 +1,7 @@
 export const GALLERY = {
   id: "galeria",
   eyebrow: "Eredmények",
-  title: "Autók, amik mosolyogva gurultak ki nálunk",
+  title: "Autók, amik mosolyogva gurultak ki tőlünk",
   subtitle: "Egy kis ízelítő a mindennapi munkánkból.",
   items: [
     {
