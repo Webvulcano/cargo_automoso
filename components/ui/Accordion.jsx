@@ -24,20 +24,28 @@ export default function Accordion({ items, defaultOpenIndex = -1, idPrefix = "ac
             >
               {item.question}
               <span
-                className={`shrink-0 text-2xl text-primary transition-transform ${isOpen ? "rotate-45" : ""}`}
+                className={`shrink-0 text-2xl text-primary transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
                 aria-hidden="true"
               >
                 +
               </span>
             </button>
+            {/* grid-template-rows 0fr↔1fr trükk animálja a lenyílást — a
+                `hidden` attribútum ezt instant kapcsolná, nem animálható. */}
             <div
-              id={panelId}
-              role="region"
-              aria-labelledby={buttonId}
-              hidden={!isOpen}
-              className="px-6 pb-5 text-base leading-relaxed text-muted"
+              className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
             >
-              {item.answer}
+              <div
+                id={panelId}
+                role="region"
+                aria-labelledby={buttonId}
+                aria-hidden={!isOpen}
+                className="overflow-hidden"
+              >
+                <div className="px-6 pb-5 text-base leading-relaxed text-muted">
+                  {item.answer}
+                </div>
+              </div>
             </div>
           </div>
         );
